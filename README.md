@@ -50,6 +50,11 @@ def main():
  #This links the word hello to the Python file. So when you type ros2 run first_pkg hello, ROS2 knows which code to run.#
 
 cd ~/ros2_ws
-colcon build    #Build the workspace. This prepares your code and sets it up so ROS2 can find and run it.#
-source install/setup.bash                   #Tell your terminal about the new package you just built. Without this, ROS2 won’t see your package.#
+
+colcon build    
+#Build the workspace. This prepares your code and sets it up so ROS2 can find and run it.#
+
+source install/setup.bash                   
+#Tell your terminal about the new package you just built. Without this, ROS2 won’t see your package.#
+
 ros2 run first_pkg hello                   
