@@ -3,13 +3,17 @@ wget http://fishros.com/install -O fishros && . fishros
 
 # Output ROS Version #
 source /opt/ros/foxy/setup.bash
+
 echo $ROS_DISTRO  
 
 # Turtle Node Example #
 
 ros2 run turtlesim turtlesim_node
+
 ros2 run turtlesim turtle_teleop_key
+
 ros2 topic echo /turtle1/pose
+
 rqt
 
 # Try Gazebo and Rviz #
