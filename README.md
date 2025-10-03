@@ -31,7 +31,7 @@ os2 pkg create first_pkg --build-type ament_python
 #Ask ROS2 to create a new Python package called first_pkg. It gives you a ready-made folder structure and files so you don’t have to set them up by hand.#
 
 gedit ~/ros2_ws/src/first_pkg/package.xml   （#  <exec_depend>rclpy</exec_depend>   #）   
-#add dependenc. Tell ROS2: “my package uses rclpy,” which is the Python library that talks to ROS2. If you don’t list it, the code might fail on another computer.#
+#add dependency. Tell ROS2: “my package uses rclpy,” which is the Python library that talks to ROS2. If you don’t list it, the code might fail on another computer.#
 
 gedit ~/ros2_ws/src/first_pkg/first_pkg/hello.py     
 (#   import rclpy
@@ -47,9 +47,9 @@ def main():
 #create a samll node#
 
  gedit ~/ros2_ws/src/first_pkg/setup.py     （#    'hello = first_pkg.hello:main'   #）     
- 
+ #This links the word hello to the Python file. So when you type ros2 run first_pkg hello, ROS2 knows which code to run.#
 
 cd ~/ros2_ws
-colcon build
-source install/setup.bash
-ros2 run first_pkg hello
+colcon build    #Build the workspace. This prepares your code and sets it up so ROS2 can find and run it.#
+source install/setup.bash                   #Tell your terminal about the new package you just built. Without this, ROS2 won’t see your package.#
+ros2 run first_pkg hello                   
